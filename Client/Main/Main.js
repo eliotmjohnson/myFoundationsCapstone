@@ -1,16 +1,27 @@
 const headerArrow = document.querySelector(".header-arrow");
-const headerText = document.querySelector(".header-dropdown-text");
+const headerTitleTwo = document.querySelector(".header-title-two");
+const madlibSelector = document.querySelector(".madlib-outline-selection");
 
 const headerDropdown = (e) => {
 	e.preventDefault();
-	e.target.parentNode.classList.toggle("active");
+	madlibSelector.classList.toggle("yikes");
 	headerArrow.classList.toggle("header-arrow-active");
-	if (headerText.classList.contains("header-dropdown-text-active")) {
-		headerText.classList.remove("header-dropdown-text-active");
-		headerText.style.transitionDelay = "0s";
+	e.target.parentNode.classList.toggle("active");
+
+	if (headerTitleTwo.classList.contains("yikes")) {
+		headerTitleTwo.classList.remove("yikes");
+		headerTitleTwo.style.transitionDelay = ".4s";
+		madlibSelector.style.transitionDelay = "0s";
+		madlibSelector.style.transition = "opacity .2s"
+		madlibSelector.classList.remove("yikes");
+		
 	} else {
-        headerText.classList.add("header-dropdown-text-active");
-        headerText.style.transitionDelay = ".3s";
+		headerTitleTwo.classList.add("yikes");
+		headerTitleTwo.style.transitionDelay = ".1s";
+		madlibSelector.style.transition = "opacity 1s"
+		madlibSelector.classList.add("yikes");
+		madlibSelector.style.transitionDelay = ".5s";
+
 	}
 };
 

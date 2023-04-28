@@ -20,7 +20,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 10rem;
+    min-height: 12rem;
     background-image: linear-gradient(#0466C8, #5C677D);
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
@@ -30,22 +30,30 @@ a {
 .active {
     border-bottom-left-radius: 10rem;
     border-bottom-right-radius: 10rem;
-    padding-bottom: 20rem;
+    padding-bottom: 40rem;
+}
+
+.main-header>nav>a {
+    transition: color .3s;
+}
+
+.main-header>nav>a:hover {
+    color: lightgreen;
 }
 
 .header-nav-left {
     display: flex;
     flex: 1;
     justify-content: flex-end;
-    color: #979DAC;
+    color: rgb(254, 89, 89);
     font-size: 1.4rem;
 }
 
 .header-title {
     flex: 1;
-    color: #001233;
-    max-width: 50rem;
-    min-width: 40rem;
+    color: lightgreen;
+    max-width: 20rem;
+    min-width: 30rem;
     text-align: center;
     font-size: 4rem;
     cursor: default;
@@ -53,7 +61,7 @@ a {
 
 .header-nav-right {
     flex: 1;
-    color: #979DAC;
+    color: rgb(254, 89, 89);
     font-size: 1.4rem;
 }
 
@@ -65,31 +73,86 @@ a:visited {
     position: absolute;
     max-height: fit-content;
     bottom: 0rem;
-    top: 8rem;
+    top: 9.5rem;
     font-size: 1.5rem;
+    line-height: .5;
+    text-align: center;
     cursor: pointer;
     color: #002855;
     z-index: 1;
-    transition: top 1s;
+    transition: top 1s, color .3s;
+}
+
+.header-arrow:hover {
+    color: rgb(254, 89, 89);
 }
 
 .header-arrow-active {
-    top: 28rem;
+    top: 49.5rem;
 }
 
 .header-dropdown-text {
     display: flex;
-    opacity: 0;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
+    gap: 2rem;
     width: 100%;
-    top: 8rem;
+    top: 18rem;
     height: 20rem;
     z-index: 0;
-    transition: opacity .4s;
 }
 
-.header-dropdown-text-active {
+.header-title-two {
+    font-size: 2rem;
+    color: #002855;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.madlib-outline-selection {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    opacity: 0;
+    transition: opacity 1s;
+    transition-delay: 0s;
+}
+
+.yikes {
     opacity: 1;
+}
+
+.madlib-outline-selection-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    max-height: 14rem;
+    flex-wrap: wrap;
+}
+
+.madlib-outline-selection-buttons>button {
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-family: myCustomFont;
+    letter-spacing: .1rem;
+    min-height: 2rem;
+    min-width: 4rem;
+    color: #002855;
+    background-color: rgb(254, 89, 89);
+    cursor: pointer;
+    transition: color .5s cubic-bezier(.19, 1, .22, 1), background-color .5s cubic-bezier(.19, 1, .22, 1);
+}
+
+.madlib-outline-selection-buttons>button:hover{
+    background-color: lightgreen;
+    color: rgb(254, 89, 89);
+}
+
+.madlib-preview{
+    color: aliceblue;
+    text-align: center;
+    max-width: 24rem;
 }
