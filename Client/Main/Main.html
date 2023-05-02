@@ -5,69 +5,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../Images/favicon.ico">
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="./Main.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
     <script src="./Main.js" defer></script>
-    <title>Main</title>
+    <title>MadLib Madness</title>
 </head>
 
 <body>
     <header class="main-header">
+        <img class="madlib-guy1" src="../Images/madlib_guy1.png" alt="madlib-guy1">
         <nav class="header-nav-left">
-            <a href="" style="text-decoration: none;">Link 1</a>
+            <a href="https://en.wikipedia.org/wiki/Mad_Libs" style="text-decoration: none;" target="_blank">
+                What are MadLibs?
+            </a>
         </nav>
         <h1 class="header-title">MadLib Madness</h1>
         <nav class="header-nav-right">
-            <a href="" style="text-decoration: none;">Link 2</a>
+            <a href="https://www.madlibs.com/" style="text-decoration: none;" target="_blank">MadLibs Website</a>
         </nav>
+        <img class="madlib-guy2" src="../Images/madlib_guy2.png" alt="madlib-guy2">
         <h3 class="header-arrow">Start Here<br>&#8964</h3>
     </header>
     <section class="header-dropdown-text">
         <p class="header-title-two">Pick your favorite MadLibs story!!</p>
         <aside class="madlib-outline-selection">
-            <div style="display:flex; flex-direction: column; align-items: center; gap: .5rem;">
-                <h3 style="font-size: 2rem;">Click for a preview!</h3>
+            <div>
+                <h3 class="border">Click for a preview!</h3>
                 <section style="display: flex; gap: .5rem;">
                     <div class="madlib-outline-selection-buttons">
                         <button>Christmas Vacation</button>
-                        <button>null</button>
-                        <button>null</button>
-                        <button>null</button>
-                        <button>null</button>
+                        <button>Spooky Halloween</button>
+                        <button>Birthday Party!</button>
+                        <button>Family Roadtrip</button>
+                        <button>Thanksgiving</button>
                     </div>
                     <div class="madlib-outline-selection-buttons">
-                        <button>null</button>
-                        <button>null</button>
-                        <button>null</button>
-                        <button>null</button>
-                        <button>null</button>
+                        <button>Scooby-Doo!</button>
+                        <button>Trip to Disney World</button>
+                        <button>Charlie Brown</button>
+                        <button>The Avengers</button>
+                        <button>Spongebob Squarepants</button>
                     </div>
                 </section>
             </div>
-            <section class="madlib-preview">
-                Once upon a time, during the (adjective) holiday season of Christmas, (name) and their (adjective)
-                family decided to take a (adjective) vacation to (location). They packed their bags with (plural noun)
-                and plenty of (adjective) holiday cheer, and set off on their adventure.
-                <br><br>
-                Upon arriving at their destination, they were greeted by a (adjective) snowfall and (verb ending in
-                -ing) carolers singing their favorite (plural noun). They checked into their (adjective) hotel room,
-                which was decorated with (plural noun) and a (adjective) Christmas tree.
-                <br><br>
-                During their vacation, they enjoyed (verb ending in -ing) in the snow, building a (adjective) snowman
-                and having (adjective) snowball fights. They also went (verb ending in -ing) in the local shops, picking
-                out (adjective) souvenirs and (plural noun) to bring back home.
-                <br><br>
-                On Christmas day, they woke up to find that (name) had left (plural noun) under the tree for each member
-                of the family. They spent the day (verb ending in -ing), playing (plural noun) and enjoying a
-                (adjective) feast of holiday (noun).
-                <br><br>
-                As their vacation came to an end, they reflected on all of the (adjective) memories they had made
-                together. They packed up their (plural noun) and headed home, grateful for the (adjective) Christmas
-                vacation they had shared.
-            </section>
+            <section class="madlib-preview"></section>
+            <span>
+                <button>
+                    <h3>Start MadLib-ing</h3>
+                    <div>&#8594;</div>
+                </button>
+            </span>
         </aside>
     </section>
+    <Main>
+        <Section></Section>
+    </Main>
 </body>
 
 </html>
