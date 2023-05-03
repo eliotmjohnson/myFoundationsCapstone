@@ -8,12 +8,18 @@
     <link rel="icon" type="image/x-icon" href="../Images/favicon.ico">
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="./Main.css">
+    <link rel="stylesheet" href="./Main-Mobile.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
     <script src="./Main.js" defer></script>
     <title>MadLib Madness</title>
 </head>
 
 <body>
+    <div class="semi-black-background">
+        <div>
+            <h1 class="start-over">&#x2191 <br> Create another MadLib!!</h1>
+        </div>
+    </div>
     <header class="main-header">
         <img class="madlib-guy1" src="../Images/madlib_guy1.png" alt="madlib-guy1">
         <nav class="header-nav-left">
@@ -31,9 +37,9 @@
     <section class="header-dropdown-text">
         <p class="header-title-two">Pick your favorite MadLibs story!!</p>
         <aside class="madlib-outline-selection">
-            <div>
-                <h3 class="border">Click for a preview!</h3>
-                <section style="display: flex; gap: .5rem;">
+            <div class="selectors">
+                <h3 class="border">Click to see a story!</h3>
+                <section style="display: flex; gap: .5rem; visibility: hidden;">
                     <div class="madlib-outline-selection-buttons">
                         <button>Christmas Vacation</button>
                         <button>Spooky Halloween</button>
@@ -51,16 +57,19 @@
                 </section>
             </div>
             <section class="madlib-preview"></section>
-            <span>
-                <button>
-                    <h3>Start MadLib-ing</h3>
-                    <div>&#8594;</div>
+            <span class="get-madlibing">
+                <button class="pointer">
+                    <h3 class="pointer">Start MadLib-ing</h3>
+                    <div class="pointer">&#8594</div>
                 </button>
             </span>
         </aside>
     </section>
-    <Main>
-        <Section></Section>
+    <Main class="madlib-main-screen">
+        <form>
+            <input type="text">
+            <button type="submit">Next!</button>
+        </form>
     </Main>
 </body>
 

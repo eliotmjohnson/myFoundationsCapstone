@@ -11,7 +11,11 @@ app.use(express.static(path.join(__dirname, "../Client/Main/")));
 require("dotenv").config();
 const { SERVER_PORT } = process.env;
 
-const { getMainPage, getMadlibContent } = require("./Controller");
+const {
+	getMainPage,
+	getMadlibContent,
+	getMadlibPrompts,
+} = require("./Controller");
 
 // Seed
 const { seed } = require("../Database/SeedDb");
@@ -20,6 +24,7 @@ app.post("/seed", seed);
 // Get Requests
 app.get("/", getMainPage);
 app.get("/api/madlib/:id", getMadlibContent);
+app.get("/api/madlib/prompts/:madlibName", getMadlibPrompts);
 
 // Post Requests
 app.post("");

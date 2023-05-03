@@ -7,10 +7,31 @@
     cursor: default;
 }
 
-@media screen and (max-width: 600px) {
-    .madlib-outline-selection {
-        flex-direction: column;
-    }
+.semi-black-background {
+    background-color: black;
+    z-index: -1;
+    height: 60rem;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.semi-black-background>div {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 3rem);
+}
+
+.start-over {
+    color: aliceblue;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-right: 5rem;
 }
 
 body {
@@ -18,7 +39,11 @@ body {
     letter-spacing: .1rem;
     background-image: linear-gradient(158deg, rgb(254, 89, 89) 54%, lightgreen 55%, #0466C8 56%);
     background-repeat: no-repeat;
-    min-height: 100vh;
+    min-height: 60rem;
+}
+
+strong {
+    color: rgb(254, 89, 89);
 }
 
 a {
@@ -76,7 +101,7 @@ a {
 }
 
 a:visited {
-    color: inherit;
+    color: rgb(254, 89, 89);
 }
 
 .header-arrow {
@@ -127,7 +152,6 @@ a:visited {
     width: 100%;
     top: 18rem;
     height: 20rem;
-    z-index: 0;
 }
 
 .header-title-two {
@@ -142,9 +166,50 @@ a:visited {
     justify-content: center;
     align-items: center;
     gap: 3rem;
+    width: 100%
+}
+
+.selectors {
     opacity: 0;
-    transition: opacity 1s;
-    transition-delay: 0s;
+}
+
+.get-madlibing {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.get-madlibing button {
+    background-color: rgb(254, 89, 89);
+    border: none;
+    padding-top: 1rem;
+    font-family: inherit;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+    border-radius: 1rem;
+    min-height: 5rem;
+    box-shadow: 0 .5rem 1rem 0 black;
+    min-width: 12rem;
+    color: #002855;
+    transition: color .35s, background-color .35s, transform .35s;
+}
+
+.get-madlibing button:hover {
+    background-color: lightgreen;
+    color: rgb(254, 89, 89);
+    transform: scale(1.2);
+}
+
+.get-madlibing>h3 {
+    font-size: 1.1rem;
+    letter-spacing: .15rem;
+}
+
+.get-madlibing>div {
+    font-size: 1.9rem;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 .yikes {
@@ -174,6 +239,11 @@ a:visited {
 .madlib-outline-selection-buttons>button:hover {
     background-color: lightgreen;
     color: rgb(254, 89, 89);
+}
+
+.madlib-outline-selection-buttons>button:active {
+    scale: .98;
+    -webkit-transform: scale(.98);
 }
 
 @keyframes border-fun {
@@ -216,9 +286,76 @@ a:visited {
     border-top-right-radius: .5rem;
     border-bottom-right-radius: 2rem;
     border-bottom-left-radius: .5rem;
+    position: relative;
     opacity: 0;
     scale: 0;
-    transition: scale 1s;
+    right: 0;
+    top: 0;
+    transition: transform 1s, scale 1s, top 1s, right 1s, color 1s, background-color 1s;
+    z-index: 1;
+}
+
+.completed-madlib-preview {
+    background-color: lightgreen;
+    color: #002855;
+    transform: scale(1.35);
+    z-index: 3;
+    box-shadow: 0 0 1.5rem 0 white;
+    transition: transform 1s, top 1s, right 3s, color 1s, background-color 1s, box-shadow 1s;
+    right: 11.5rem;
+    top: -.5rem;
+}
+
+@keyframes preview-magic {
+    0% {
+        z-index: 1;
+    }
+
+    30% {
+        scale: 1.3;
+        z-index: 1;
+        box-shadow: .5rem .5rem 4rem 0 #002855;
+    }
+
+    100% {
+        scale: 1.15;
+        z-index: -1;
+    }
+}
+
+@keyframes preview-magic-reverse {
+    0% {
+        scale: 1.15;
+        z-index: 1;
+    }
+
+    40% {
+        scale: 1.3;
+        z-index: 1;
+        box-shadow: .5rem .5rem 4rem 0 #002855;
+    }
+
+    100% {
+        z-index: 1;
+    }
+}
+
+.madlib-preview-movement {
+    animation-name: preview-magic;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    transition: scale 1s, top 2s, right 2s, color 1s, background-color 1s;
+    right: 11.5rem;
+    top: 5rem;
+}
+
+.madlib-preview-movement-reverse {
+    animation-name: preview-magic-reverse;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+    transition: scale 1s, top 1.3s, right 1.3s, color 1s, background-color 1s;
+    right: 0;
+    top: 0;
 }
 
 .madlib-preview::first-line {
@@ -240,4 +377,62 @@ a:visited {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+}
+
+.madlib-main-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    top: 55.7rem;
+    left: -30rem;
+    transition: left .5s;
+    transition-delay: 0s;
+}
+
+.madlib-main-screen>form>input {
+    font-family: inherit;
+    color: #0466C8;
+    font-size: 1.5rem;
+    letter-spacing: .15rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: text;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2.5rem;
+    text-shadow: 0 .15rem .2rem #002855;
+    background-color: rgb(254, 89, 89);
+    box-shadow: 0 .4rem 1.3rem 0 black;
+}
+
+.madlib-main-screen>form>input:focus {
+    outline: none;
+}
+
+.madlib-main-screen>form>input::placeholder {
+    color: lightgreen;
+    text-shadow: 0 .1rem .2rem #002855;
+    text-align: center;
+}
+
+
+.madlib-main-screen button {
+    font-family: inherit;
+    color: rgb(254, 89, 89);
+    font-size: 1.5rem;
+    letter-spacing: .15rem;
+    border-radius: 3rem;
+    border: none;
+    cursor: text;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2.5rem;
+    text-shadow: 0 .15rem .2rem #002855;
+    background-color: lightgreen;
+    box-shadow: 0 .4rem 1.3rem 0 black;
+    cursor: pointer;
 }

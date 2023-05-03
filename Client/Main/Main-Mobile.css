@@ -1,0 +1,136 @@
+@media screen and (max-width: 1520px) {
+    .madlib-outline-selection {
+        flex-direction: column;
+    }
+
+    body {
+        min-height: 90rem;
+    }
+
+    .semi-black-background {
+        height: 90rem;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    .semi-black-background>div {
+        display: block;
+        position: static;
+        width: auto;
+        padding-top: 3rem;
+    }
+
+    .start-over {
+        padding-right: 0;
+    }
+
+    .header-dropdown-text {
+        top: 37.5rem;
+    }
+
+    .header-title-two {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .active {
+        border-bottom-left-radius: 10rem;
+        border-bottom-right-radius: 10rem;
+        padding-bottom: 80rem;
+    }
+
+    .header-arrow-active {
+        top: 89.5rem;
+    }
+
+    .madlib-preview-movement {
+        top: -26.2rem;
+        right: 0;
+    }
+
+    .madlib-main-screen {
+        width: 55rem;
+    }
+
+    .completed-madlib-preview {
+        right: 0rem;
+        top: -25rem;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .header-nav-left {
+        display: none;
+    }
+
+    .header-nav-right {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        min-height: 70rem;
+    }
+
+    .semi-black-background {
+        height: 70rem;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    .madlib-guy1 {
+        display: none;
+    }
+
+    .madlib-guy2 {
+        display: none;
+    }
+
+    .header-title {
+        max-width: 0;
+        min-width: 100%;
+        font-size: 3rem;
+    }
+
+    .main-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 12rem;
+        transition: padding-bottom 1s, border-radius 1s;
+    }
+
+    .active {
+        border-bottom-left-radius: 10rem;
+        border-bottom-right-radius: 10rem;
+        padding-bottom: 51rem;
+    }
+
+    .header-arrow-active {
+        top: 60.5rem;
+    }
+
+    .header-dropdown-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        gap: 1.2rem;
+        width: 100%;
+        top: 22.75rem;
+        height: 20rem;
+        scale: .6;
+    }
+}

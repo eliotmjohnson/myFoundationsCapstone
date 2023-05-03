@@ -26,14 +26,33 @@ module.exports = {
 		rollbar.log("Someone accessed website!");
 		res.status(200).sendFile(path.join(__dirname, "../Client/Main/Main.html"));
 	},
+
 	getMadlibContent: (req, res) => {
 		const { id } = req.params;
+
 		sequelize
 			.query(
 				`
 			SELECT madlib_content
 			FROM mad_libs
 			WHERE madlib_name = '${id}';
+			`
+			)
+			.then((dbRes) => {
+				res.status(200).send(dbRes[0]);
+			})
+			.catch((err) => console.log(err));
+	},
+
+	getMadlibPrompts: (req, res) => {
+		const { madlibName } = req.params;
+
+		sequelize
+			.query(
+				`
+				SELECT madlib_word_types
+				FROM mad_libs
+				WHERE madlib_name = '${madlibName}';
 			`
 			)
 			.then((dbRes) => {
