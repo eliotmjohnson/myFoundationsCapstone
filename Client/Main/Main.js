@@ -12,10 +12,11 @@ const madlibPreview = document.querySelector(".madlib-preview");
 const getMadlibing = document.querySelector(".get-madlibing");
 const madlibMain = document.querySelector(".madlib-main-screen");
 const madlibWordInput = document.querySelector(".madlib-main-screen input");
-const madlibWordSubmit = document.querySelector(".madlib-main-screen button");
 const madlibWordForm = document.querySelector(".madlib-main-screen>form");
 const blackBackground = document.querySelector(".semi-black-background");
 const startOver = document.querySelector(".start-over");
+const backButton = document.querySelector(".back-button");
+const nextButton = document.querySelector("#next-button");
 
 // Other Variables
 
@@ -69,6 +70,7 @@ const headerDropdown = () => {
 		madlibWordInput.value = "";
 
 		x = 0;
+		userWordArr = [];
 	}
 };
 
@@ -86,6 +88,7 @@ const getMadlibPreview = (e) => {
 		.then((res) => {
 			let madlibContent = res.data[0].madlib_content;
 			newContent = madlibContent.replaceAll("  ", "<br><br>");
+			newContent = newContent.replace("[", "(").replace("]", ")");
 
 			madlibPreview.id = `${buttonText}`;
 			madlibPreview.innerHTML = newContent;
@@ -150,7 +153,7 @@ const moveMadlib = (e) => {
 	madlibMain.style.transitionDelay = "1.5s";
 	madlibMain.style.left = "50%";
 
-	madlibWordSubmit.textContent = "Next!";
+	nextButton.textContent = "Next!";
 };
 
 getMadlibing.addEventListener("click", moveMadlib);
@@ -172,7 +175,7 @@ const getPlaceHolders = () => {
 		.get(`/api/madlib/prompts/${madlibName}`)
 		.then((res) => {
 			let placeHolder = res.data[0].madlib_word_types;
-			placeholderArr = JSON.parse(placeHolder);
+			placeholderArr = placeHolder.split(",");
 
 			madlibWordInput.placeholder = `${placeholderArr[0].toUpperCase()}`;
 		})
@@ -186,12 +189,17 @@ const incrementWord = () => {
 const handleInput = (e) => {
 	e.preventDefault();
 
-	const text = madlibWordInput.value;
-	userWordArr.push(text);
+	if (madlibWordInput.value !== "") {
+		const text = madlibWordInput.value;
 
-	setNextPlaceholder();
+		userWordArr.splice(x, 1, text);
 
-	madlibWordInput.value = "";
+		setNextPlaceholder();
+
+		madlibWordInput.value = "";
+	} else {
+		alert("Ah, ah , ah. You need to actually put something in the text box.");
+	}
 };
 
 const computeMadLib = () => {
@@ -210,8 +218,24 @@ const computeMadLib = () => {
 	displayCompletedMadlib(madlibText);
 };
 
+const goBackAPlaceholder = (e) => {
+	e.preventDefault();
+
+	if (x > 0) {
+		x -= 2;
+
+		incrementWord();
+
+		if (nextButton.textContent === "Click to see your completed MadLib!!") {
+			nextButton.textContent = "Next!";
+		}
+
+		madlibWordInput.placeholder = `${placeholderArr[x].toUpperCase()}`;
+	} else alert("You haven't put any words in silly!");
+};
+
 const setNextPlaceholder = () => {
-	if (madlibWordSubmit.textContent === "Click to see your completed MadLib!!") {
+	if (nextButton.textContent === "Click to see your completed MadLib!!") {
 		computeMadLib();
 	} else {
 		incrementWord();
@@ -219,7 +243,7 @@ const setNextPlaceholder = () => {
 		madlibWordInput.placeholder = `${placeholderArr[x].toUpperCase()}`;
 
 		if (x === placeholderArr.length - 1) {
-			madlibWordSubmit.textContent = "Click to see your completed MadLib!!";
+			nextButton.textContent = "Click to see your completed MadLib!!";
 		}
 	}
 };
@@ -239,6 +263,7 @@ const styleCompletedMadlib = () => {
 	madlibPreview.classList.add("completed-madlib-preview");
 };
 
+backButton.addEventListener("click", goBackAPlaceholder);
 getMadlibing.addEventListener("click", getPlaceHolders);
 madlibWordForm.addEventListener("submit", handleInput);
 

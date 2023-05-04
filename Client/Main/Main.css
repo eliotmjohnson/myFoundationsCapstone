@@ -166,7 +166,7 @@ a:visited {
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    width: 100%
+    width: 100%;
 }
 
 .selectors {
@@ -307,10 +307,6 @@ a:visited {
 }
 
 @keyframes preview-magic {
-    0% {
-        z-index: 1;
-    }
-
     30% {
         scale: 1.3;
         z-index: 1;
@@ -331,12 +327,7 @@ a:visited {
 
     40% {
         scale: 1.3;
-        z-index: 1;
         box-shadow: .5rem .5rem 4rem 0 #002855;
-    }
-
-    100% {
-        z-index: 1;
     }
 }
 
@@ -391,6 +382,7 @@ a:visited {
     left: -30rem;
     transition: left .5s;
     transition-delay: 0s;
+    width: 60rem;
 }
 
 .madlib-main-screen>form>input {
@@ -404,6 +396,7 @@ a:visited {
     padding-left: 1rem;
     padding-right: 1rem;
     height: 2.5rem;
+    width: 20rem;
     text-shadow: 0 .15rem .2rem #002855;
     background-color: rgb(254, 89, 89);
     box-shadow: 0 .4rem 1.3rem 0 black;
@@ -419,7 +412,6 @@ a:visited {
     text-align: center;
 }
 
-
 .madlib-main-screen button {
     font-family: inherit;
     color: rgb(254, 89, 89);
@@ -430,9 +422,16 @@ a:visited {
     cursor: text;
     padding-left: 1rem;
     padding-right: 1rem;
-    height: 2.5rem;
     text-shadow: 0 .15rem .2rem #002855;
     background-color: lightgreen;
     box-shadow: 0 .4rem 1.3rem 0 black;
     cursor: pointer;
+}
+
+.back-button {
+    height: 2.5rem;
+}
+
+#next-button {
+    min-height: 2.5rem;
 }
