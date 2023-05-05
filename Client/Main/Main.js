@@ -196,7 +196,11 @@ const handleInput = (e) => {
 
 		setNextPlaceholder();
 
-		madlibWordInput.value = "";
+		if (userWordArr[x] === undefined) {
+			madlibWordInput.value = "";
+		} else {
+			madlibWordInput.value = userWordArr[x];
+		}
 	} else {
 		alert("Ah, ah , ah. You need to actually put something in the text box.");
 	}
@@ -222,6 +226,8 @@ const goBackAPlaceholder = (e) => {
 	e.preventDefault();
 
 	if (x > 0) {
+		madlibWordInput.value = "";
+
 		x -= 2;
 
 		incrementWord();
@@ -230,8 +236,9 @@ const goBackAPlaceholder = (e) => {
 			nextButton.textContent = "Next!";
 		}
 
+		madlibWordInput.value = userWordArr[x];
 		madlibWordInput.placeholder = `${placeholderArr[x].toUpperCase()}`;
-	} else alert("You haven't put any words in silly!");
+	} else alert("There's nothing over there silly!");
 };
 
 const setNextPlaceholder = () => {

@@ -1,0 +1,245 @@
+@font-face {
+    font-family: myCustomFont;
+    src: url(../Fonts/Bangers-Regular.ttf);
+}
+
+* {
+    cursor: default;
+}
+
+.semi-black-background {
+    background-color: black;
+    z-index: -1;
+    height: 60rem;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.semi-black-background>div {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 3rem);
+}
+
+.start-over {
+    color: aliceblue;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-right: 5rem;
+}
+
+body {
+    font-family: myCustomFont;
+    letter-spacing: .1rem;
+    background-image: linear-gradient(158deg, rgb(254, 89, 89) 54%, lightgreen 55%, #0466C8 56%);
+    background-repeat: no-repeat;
+    backdrop-filter: blur(.4rem);
+    min-height: 60rem;
+}
+
+strong {
+    color: rgb(254, 89, 89);
+}
+
+h1 {
+    font-size: 4rem;
+    color: #002855;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: lightgreen;
+}
+
+p {
+    font-size: 1.5rem;
+    color: #0466C8;
+}
+
+a {
+    cursor: pointer;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 12rem;
+    background-image: linear-gradient(#0466C8 60%, #203c5d);
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    box-shadow: 0 1rem 3rem 0 black;
+    transition: padding-bottom 1s, border-radius 1s;
+}
+
+.main-header>nav>a {
+    transition: color .3s;
+    text-shadow: 0 .05rem .4rem #002855;
+}
+
+.main-header>nav>a:hover {
+    color: #002855;
+}
+
+.header-nav-left {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    color: rgb(254, 89, 89);
+    font-size: 1.4rem;
+}
+
+.header-title {
+    flex: 1;
+    color: lightgreen;
+    max-width: 20rem;
+    min-width: 30rem;
+    text-align: center;
+    font-size: 4rem;
+    cursor: default;
+}
+
+.header-nav-right {
+    flex: 1;
+    color: rgb(254, 89, 89);
+    font-size: 1.4rem;
+}
+
+a:visited {
+    color: rgb(254, 89, 89);
+}
+
+.header-arrow {
+    position: absolute;
+    max-height: fit-content;
+    bottom: 0rem;
+    top: 9rem;
+    font-size: 2rem;
+    line-height: .5;
+    text-align: center;
+    color: #002855;
+    z-index: 1;
+    transition: top 1s, color .3s;
+}
+
+.madlib-guy1 {
+    margin-left: 15rem;
+    max-width: 8rem;
+    flex: 1;
+    border-radius: 5rem;
+    rotate: 30deg;
+}
+
+.madlib-guy2 {
+    margin-right: 15rem;
+    max-width: 8rem;
+    flex: 1;
+    rotate: -20deg;
+    border-radius: 5rem;
+}
+
+.madlib-gallery {
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    gap: 3rem;
+    margin: 1rem;
+}
+
+.madlib-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(254, 89, 89);
+    border-radius: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    box-shadow: 0 0rem 3rem 0 black;
+    position: relative;
+    overflow: hidden;
+}
+
+.madlib-card img {
+    border-radius: 20rem;
+    height: 45rem;
+    opacity: .3;
+}
+
+.madguys{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+}
+.madguy-one {
+    position: relative;
+    left: -12rem;
+}
+
+.madguy-two {
+    position: relative;
+    right: -12rem;
+}
+
+.card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    z-index: 1;
+}
+.madlib-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem;
+    border-radius: 2rem;
+    background-color: aliceblue;
+    box-shadow: 0 1rem 2rem 0 black;
+    height: 20rem;
+    min-width: 20rem;
+}
+
+.madlib-preview {
+    background-color: #002855;
+    box-shadow: .5rem .5rem .8rem 0 #002855;
+    padding: 1.2rem;
+    padding-top: .5rem;
+    color: aliceblue;
+    text-align: center;
+    line-height: 1.46;
+    height: 33rem;
+    min-width: 35rem;
+    font-size: 1rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: .5rem;
+    transition: transform 1s, scale 1s, top 1s, right 1s, color 1s, background-color 1s;
+    z-index: 1;
+}
+
+.completed-madlib-preview {
+    background-color: lightgreen;
+    color: #002855;
+    transform: scale(1.35);
+    z-index: 3;
+    box-shadow: 0 0 1.5rem 0 white;
+    transition: transform 1s, top 1s, right 3s, color 1s, background-color 1s, box-shadow 1s;
+    right: 11.5rem;
+    top: -.5rem;
+}
+
+.madlib-preview::first-line {
+    text-decoration: underline;
+    font-size: 1.3rem;
+    color: #2d87e2;
+}

@@ -70,6 +70,7 @@ a {
 
 .main-header>nav>a {
     transition: color .3s;
+    text-shadow: 0 .05rem .4rem #002855;
 }
 
 .main-header>nav>a:hover {

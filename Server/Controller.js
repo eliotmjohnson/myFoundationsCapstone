@@ -27,6 +27,12 @@ module.exports = {
 		res.status(200).sendFile(path.join(__dirname, "../Client/Main/Main.html"));
 	},
 
+	getGalleryPage: (req, res) => {
+		res
+			.status(200)
+			.sendFile(path.join(__dirname, "../Client/Gallery/Gallery.html"));
+	},
+
 	getMadlibContent: (req, res) => {
 		const { id } = req.params;
 

@@ -6,7 +6,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "../Client")));
-app.use(express.static(path.join(__dirname, "../Client/Main/")));
+app.use(express.static(path.join(__dirname, "../Client/Main")));
+app.use(express.static(path.join(__dirname, "../Client/Gallery")));
 
 require("dotenv").config();
 const { SERVER_PORT } = process.env;
@@ -15,6 +16,7 @@ const {
 	getMainPage,
 	getMadlibContent,
 	getMadlibPrompts,
+	getGalleryPage,
 } = require("./Controller");
 
 // Seed
@@ -23,6 +25,7 @@ app.post("/seed", seed);
 
 // Get Requests
 app.get("/", getMainPage);
+app.get("/Gallery", getGalleryPage);
 app.get("/api/madlib/:id", getMadlibContent);
 app.get("/api/madlib/prompts/:madlibName", getMadlibPrompts);
 
