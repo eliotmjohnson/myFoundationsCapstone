@@ -17,6 +17,9 @@ const {
 	getMadlibContent,
 	getMadlibPrompts,
 	getGalleryPage,
+	getUserMadlibs,
+	saveUserMadlib,
+	getSortedMadlibs,
 } = require("./Controller");
 
 // Seed
@@ -24,18 +27,24 @@ const { seed } = require("../Database/SeedDb");
 app.post("/seed", seed);
 
 // Get Requests
+
 app.get("/", getMainPage);
 app.get("/Gallery", getGalleryPage);
 app.get("/api/madlib/:id", getMadlibContent);
-app.get("/api/madlib/prompts/:madlibName", getMadlibPrompts);
+app.get("/api/prompts/:madlibName", getMadlibPrompts);
+app.get("/api/user_madlibs", getUserMadlibs);
+app.get("/api/sorted_madlibs/:madlibName", getSortedMadlibs);
 
 // Post Requests
-app.post("");
+
+app.post("/api/user_madlibs", saveUserMadlib);
 
 // Delete Requests
+
 app.delete("");
 
 // Put Requests
+
 app.put("");
 
 app.listen(

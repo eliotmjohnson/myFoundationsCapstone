@@ -13,16 +13,20 @@
     height: 60rem;
     width: 100%;
     position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     opacity: 0;
     transition: opacity 1s;
 }
 
 .semi-black-background>div {
     display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    width: 100%;
-    top: calc(50% - 3rem);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5rem;
+    gap: 2rem;
 }
 
 .start-over {
@@ -31,7 +35,89 @@
     line-height: 1.2;
     font-size: 1.5rem;
     cursor: pointer;
-    padding-right: 5rem;
+    transition: color .5s;
+}
+
+.start-over:hover {
+    color: #2d87e2;
+}
+
+.save-madlib {
+    color: #2d87e2;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 1;
+    transition: color .5s, opacity .35s;
+}
+
+.save-madlib-active {
+    opacity: 0;
+}
+
+.save-madlib:hover {
+    color: aliceblue;
+}
+
+.author-name {
+    font-family: inherit;
+    color: lightgreen;
+    font-size: 1.5rem;
+    letter-spacing: .15rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: text;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2.5rem;
+    width: 20rem;
+    text-shadow: 0 .15rem .2rem #002855;
+    background-color: #2d87e2;
+}
+
+.save-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: calc(50% + 1.5rem);
+    gap: .1rem;
+    right: 2rem;
+    z-index: -1;
+    scale: 0;
+    transition: scale 1s;
+}
+
+.save-form>button{
+    font-family: inherit;
+    color: aliceblue;
+    font-size: 1.5rem;
+    letter-spacing: .15rem;
+    border-radius: 3rem;
+    border: none;
+    cursor: text;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2.5rem;
+    text-shadow: 0 .15rem .2rem black;
+    background-color: rgb(254, 89, 89);
+    box-shadow: 0 .4rem 1.3rem 0 black;
+    cursor: pointer;
+}
+
+.author-name-active {
+    z-index: 2;
+    scale: 1;
+}
+
+.author-name:focus {
+    outline: none;
+}
+
+.author-name::placeholder {
+    color: rgb(254, 89, 89);
+    text-shadow: 0 .1rem .3rem black;
+    text-align: center;
 }
 
 body {
@@ -80,9 +166,11 @@ a {
 .header-nav-left {
     display: flex;
     flex: 1;
+    text-align: center;
     justify-content: flex-end;
     color: rgb(254, 89, 89);
     font-size: 1.4rem;
+    margin: 1rem;
 }
 
 .header-title {
@@ -99,6 +187,7 @@ a {
     flex: 1;
     color: rgb(254, 89, 89);
     font-size: 1.4rem;
+    margin: 1rem;
 }
 
 a:visited {
@@ -390,7 +479,7 @@ a:visited {
     font-family: inherit;
     color: #0466C8;
     font-size: 1.5rem;
-    letter-spacing: .15rem;
+    letter-spacing: .2rem;
     border-radius: 2rem;
     border: none;
     cursor: text;

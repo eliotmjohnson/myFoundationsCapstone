@@ -51,12 +51,21 @@ module.exports = {
 			.query(
 				`
 			DROP TABLE IF EXISTS mad_libs;
+			DROP TABLE IF EXISTS user_mad_libs;
 
 			CREATE TABLE mad_libs (
 				madlib_id SERIAL PRIMARY KEY,
 				madlib_name VARCHAR(255) NOT NULL,
 				madlib_content TEXT NOT NULL,
 				madlib_word_types TEXT NOT NULL
+			);
+
+			CREATE TABLE user_mad_libs (
+				user_madlib_id SERIAL PRIMARY KEY,
+				author_name VARCHAR(255) NOT NULL,
+				madlib_topic VARCHAR(255) NOT NULL,
+				madlib_content TEXT NOT NULL,
+				date_created VARCHAR(255) NOT NULL
 			);
 
 			INSERT INTO mad_libs (madlib_name, madlib_content, madlib_word_types)

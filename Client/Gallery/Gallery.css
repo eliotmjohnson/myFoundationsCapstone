@@ -8,30 +8,74 @@
 }
 
 .semi-black-background {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: -1;
-    height: 60rem;
+    height: 100%;
     width: 100%;
-    position: absolute;
+    position: fixed;
     opacity: 0;
+    top: 0;
+    overflow: scroll;
     transition: opacity 1s;
 }
 
 .semi-black-background>div {
     display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    width: 100%;
-    top: calc(50% - 3rem);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 3rem;
+    height: 100%;
+}
+
+.completed-madlib-preview {
+    padding: 1.2rem;
+    padding-top: .5rem;
+    margin-top: 5rem;
+    text-align: center;
+    line-height: 1.46;
+    height: 33rem;
+    min-width: 35rem;
+    max-width: 40rem;
+    font-size: .93rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: .5rem;
+    background-color: lightgreen;
+    color: #002855;
+    scale: 1.35;
+    z-index: 3;
+    box-shadow: 0 0 1.5rem 0 white;
+}
+
+.completed-madlib-preview::first-line {
+    text-decoration: underline;
+    font-size: 1.3rem;
+    color: #2d87e2;
 }
 
 .start-over {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: aliceblue;
+    background-color: rgb(254, 89, 89);
+    border-radius: 3rem;
+    height: 3rem;
+    width: 3rem;
     text-align: center;
     line-height: 1.2;
     font-size: 1.5rem;
     cursor: pointer;
-    padding-right: 5rem;
+    transition: height .5s, width .5s, font-size .5s;
+}
+
+.start-over:hover {
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
 }
 
 body {
@@ -39,7 +83,6 @@ body {
     letter-spacing: .1rem;
     background-image: linear-gradient(158deg, rgb(254, 89, 89) 54%, lightgreen 55%, #0466C8 56%);
     background-repeat: no-repeat;
-    backdrop-filter: blur(.4rem);
     min-height: 60rem;
 }
 
@@ -71,11 +114,21 @@ a {
     justify-content: center;
     align-items: center;
     min-height: 12rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
     background-image: linear-gradient(#0466C8 60%, #203c5d);
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
     box-shadow: 0 1rem 3rem 0 black;
     transition: padding-bottom 1s, border-radius 1s;
+    z-index: 2;
+}
+
+.active {
+    border-bottom-left-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+    padding-bottom: 30rem;
 }
 
 .main-header>nav>a {
@@ -93,6 +146,7 @@ a {
     justify-content: flex-end;
     color: rgb(254, 89, 89);
     font-size: 1.4rem;
+    margin: 1rem;
 }
 
 .header-title {
@@ -107,8 +161,10 @@ a {
 
 .header-nav-right {
     flex: 1;
+    text-align: center;
     color: rgb(254, 89, 89);
     font-size: 1.4rem;
+    margin: 1rem;
 }
 
 a:visited {
@@ -117,15 +173,24 @@ a:visited {
 
 .header-arrow {
     position: absolute;
-    max-height: fit-content;
+    max-height: 10rem;
     bottom: 0rem;
     top: 9rem;
     font-size: 2rem;
     line-height: .5;
     text-align: center;
     color: #002855;
-    z-index: 1;
+    cursor: pointer;
+    z-index: 2;
     transition: top 1s, color .3s;
+}
+
+.header-arrow:hover {
+    color: rgb(254, 89, 89);
+}
+
+.header-arrow-active {
+    top: 39rem;
 }
 
 .madlib-guy1 {
@@ -144,12 +209,95 @@ a:visited {
     border-radius: 5rem;
 }
 
+.header-dropdown-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    gap: 1.2rem;
+    width: 100%;
+    top: 13rem;
+    height: 20rem;
+}
+
+.header-title-two {
+    font-size: 3rem;
+    color: #002855;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity .3s;
+}
+
+.madlib-outline-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    gap: 3rem;
+    width: 100%;
+}
+
+.madlib-outline-selection>div>h3 {
+    font-size: 2.5rem;
+    color: lightgreen;
+    padding: 1rem;
+    border: #002855 .5rem dotted;
+    border-radius: 2rem;
+}
+
+.madlib-outline-selection>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.selectors {
+    opacity: 0;
+}
+
+.yikes {
+    opacity: 1;
+}
+
+.madlib-outline-selection-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.madlib-outline-selection-buttons>button {
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    font-family: myCustomFont;
+    letter-spacing: .1rem;
+    min-height: 4rem;
+    min-width: 18rem;
+    color: #002855;
+    background-color: rgb(254, 89, 89);
+    cursor: pointer;
+    transition: color 1.2s cubic-bezier(.19, 1, .22, 1), background-color 1.2s cubic-bezier(.19, 1, .22, 1);
+}
+
+.madlib-outline-selection-buttons>button:hover {
+    background-color: lightgreen;
+    color: rgb(254, 89, 89);
+}
+
+.madlib-outline-selection-buttons>button:active {
+    scale: .98;
+    -webkit-transform: scale(.98);
+}
+
 .madlib-gallery {
     display: flex;
     flex-direction: column;
     border-radius: 2rem;
     gap: 3rem;
     margin: 1rem;
+    margin-top: 15rem;
 }
 
 .madlib-card {
@@ -171,12 +319,13 @@ a:visited {
     opacity: .3;
 }
 
-.madguys{
+.madguys {
     display: flex;
     justify-content: space-between;
     position: absolute;
     width: 100%;
 }
+
 .madguy-one {
     position: relative;
     left: -12rem;
@@ -194,6 +343,7 @@ a:visited {
     gap: 10rem;
     z-index: 1;
 }
+
 .madlib-info {
     display: flex;
     flex-direction: column;
@@ -208,6 +358,24 @@ a:visited {
     min-width: 20rem;
 }
 
+.show-madlib {
+    display: none;
+    font-family: inherit;
+    color: #0466C8;
+    font-size: 1.5rem;
+    letter-spacing: .2rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2.5rem;
+    width: 18rem;
+    text-shadow: 0 .15rem .2rem #002855;
+    background-color: rgb(254, 89, 89);
+    box-shadow: 0 .2rem .5rem 0 black;
+}
+
 .madlib-preview {
     background-color: #002855;
     box-shadow: .5rem .5rem .8rem 0 #002855;
@@ -218,24 +386,14 @@ a:visited {
     line-height: 1.46;
     height: 33rem;
     min-width: 35rem;
-    font-size: 1rem;
+    max-width: 40rem;
+    font-size: .93rem;
     border-top-left-radius: 2rem;
     border-top-right-radius: .5rem;
     border-bottom-right-radius: 2rem;
     border-bottom-left-radius: .5rem;
     transition: transform 1s, scale 1s, top 1s, right 1s, color 1s, background-color 1s;
     z-index: 1;
-}
-
-.completed-madlib-preview {
-    background-color: lightgreen;
-    color: #002855;
-    transform: scale(1.35);
-    z-index: 3;
-    box-shadow: 0 0 1.5rem 0 white;
-    transition: transform 1s, top 1s, right 3s, color 1s, background-color 1s, box-shadow 1s;
-    right: 11.5rem;
-    top: -.5rem;
 }
 
 .madlib-preview::first-line {

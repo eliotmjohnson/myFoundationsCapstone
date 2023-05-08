@@ -1,4 +1,4 @@
-@media screen and (max-width: 1580px) {
+@media screen and (max-width: 1690px) {
     body {
         min-height: 70rem;
     }
@@ -11,26 +11,32 @@
     }
 
     .semi-black-background>div {
-        display: block;
-        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
         width: auto;
-        padding-top: 3rem;
+        padding-top: 2rem;
+        padding-right: 0;
     }
 
-    .start-over {
-        padding-right: 0;
+    .save-form {
+        width: max-content;
+        left: calc(50% - 11rem);
+        top: 7rem;
     }
 
     .completed-madlib-preview {
         right: 11.5rem;
-        top: 7rem;
+        top: 9rem;
     }
 }
 
 
 @media screen and (max-width: 1510px) {
     body {
-        min-height: 90rem;
+        min-height: 95rem;
     }
 
     .madlib-outline-selection {
@@ -38,20 +44,20 @@
     }
 
     .semi-black-background {
-        height: 90rem;
+        height: 95rem;
         display: flex;
         justify-content: center;
         align-items: flex-start;
     }
 
     .semi-black-background>div {
-        display: block;
-        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
         width: auto;
-        padding-top: 3rem;
-    }
-
-    .start-over {
+        padding-top: 2rem;
         padding-right: 0;
     }
 
@@ -83,7 +89,7 @@
 
     .completed-madlib-preview {
         right: 0rem;
-        top: -25rem;
+        top: -22rem;
     }
 }
 
@@ -93,15 +99,28 @@
     }
 
     .header-nav-right {
-        display: none;
+        position: absolute;
+        top: .7rem;
+        display: flex;
+        justify-content: center;
     }
 
     .madlib-guy1 {
-        display: none;
+        position: absolute;
+        width: 4rem;
+        top: .25rem;
+        right: 65%;
     }
 
     .madlib-guy2 {
-        display: none;
+        width: 4rem;
+        position: absolute;
+        top: .25rem;
+        left: 65%;
+    }
+
+    .semi-black-background>div {
+        padding-top: 2rem;
     }
 
     .completed-madlib-preview {
@@ -119,17 +138,28 @@
 
 @media screen and (max-width: 675px) {
     body {
-        min-height: 70rem;
+        min-height: 85rem;
     }
 
     .semi-black-background {
-        height: 70rem;
+        height: 85rem;
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: flex-start;
     }
 
+    .madlib-guy1 {
+        width: 3rem;
+        right: 70%;
+        top: .7rem;
+    }
+
+    .madlib-guy2 {
+        width: 3rem;
+        left: 70%;
+        top: .7rem;
+    }
     .header-title {
         max-width: 0;
         min-width: 100%;
@@ -144,11 +174,11 @@
     }
 
     .active {
-        padding-bottom: 51rem;
+        padding-bottom: 68rem;
     }
 
     .header-arrow-active {
-        top: 60.5rem;
+        top: 77.5rem;
     }
 
     @keyframes preview-magic {
@@ -182,7 +212,7 @@
         transform: none;
         scale: 1 !important;
         right: 0rem;
-        top: -23rem;
+        top: -20rem;
     }
 
     .madlib-preview-movement {
@@ -191,7 +221,7 @@
     }
 
     .header-dropdown-text {
-        top: 24.5rem;
+        top: 31rem;
     }
 
     .header-title-two {
@@ -200,22 +230,17 @@
         margin-bottom: -6rem;
     }
 
-    .active {
-        padding-bottom: 54rem;
-    }
-
-    .header-arrow-active {
-        top: 63.5rem;
-    }
-
     .selectors {
         scale: .65;
-        margin-bottom: -12.5rem;
+        margin-bottom: -10.5rem;
     }
 
     .madlib-preview {
-        transform: scale(.65);
-        margin-bottom: -8rem;
+        transform: scale(.8);
+        width: 26.5rem;
+        height: 40rem;
+        padding-bottom: 2rem;
+        margin-bottom: -6rem;
     }
 
     .get-madlibing {
@@ -226,7 +251,7 @@
         -webkit-transform: translate(-77%, -77%);
         transform: translate(-77%, -77%);
         width: 100%;
-        top: 38.25rem;
+        top: 50.5rem;
         left: -30rem;
         scale: .65;
     }

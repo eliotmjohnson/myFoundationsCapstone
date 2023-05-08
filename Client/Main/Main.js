@@ -17,6 +17,9 @@ const blackBackground = document.querySelector(".semi-black-background");
 const startOver = document.querySelector(".start-over");
 const backButton = document.querySelector(".back-button");
 const nextButton = document.querySelector("#next-button");
+const saveButton = document.querySelector(".save-madlib");
+const nameInput = document.querySelector(".author-name");
+const saveForm = document.querySelector(".save-form");
 
 // Other Variables
 
@@ -24,6 +27,7 @@ let x = 0;
 let placeholderArr = [];
 let userWordArr = [];
 let newContent;
+let madlibTopic;
 
 // Header Animation
 
@@ -82,6 +86,7 @@ const getMadlibPreview = (e) => {
 	e.preventDefault();
 
 	let buttonText = e.target.textContent;
+	madlibTopic = buttonText;
 
 	axios
 		.get(`/api/madlib/${buttonText}`)
@@ -126,6 +131,7 @@ for (let i = 0; i < firstButtonSet.length; i++) {
 const moveMadlib = (e) => {
 	e.preventDefault();
 
+	nameInput.value = "";
 	headerArrow.parentNode.classList.remove("active");
 
 	headerArrow.classList.remove("header-arrow-active");
@@ -172,7 +178,7 @@ const getPlaceHolders = () => {
 	let madlibName = madlibPreview.id;
 
 	axios
-		.get(`/api/madlib/prompts/${madlibName}`)
+		.get(`/api/prompts/${madlibName}`)
 		.then((res) => {
 			let placeHolder = res.data[0].madlib_word_types;
 			placeholderArr = placeHolder.split(",");
@@ -280,9 +286,7 @@ const hideBBG = () => {
 	blackBackground.style.zIndex = "-1";
 };
 
-const resetMadlib = (e) => {
-	e.preventDefault();
-
+const resetMadlib = () => {
 	resetBlackBg();
 	resetPreview();
 	headerDropdown();
@@ -300,3 +304,45 @@ const resetPreview = () => {
 };
 
 startOver.addEventListener("click", resetMadlib);
+
+// Saving Madlib to Database
+const extra = () => {
+	saveForm.classList.add("author-name-active");
+};
+
+const getNameForm = (e) => {
+	saveButton.addEventListener("transitionend", extra);
+	saveButton.classList.add("save-madlib-active");
+};
+
+const getInputAndSave = (e) => {
+	e.preventDefault();
+
+	if (nameInput.value !== "") {
+		let today = new Date().toLocaleDateString();
+		let content = madlibPreview.innerHTML;
+
+		let newSave = {
+			name: nameInput.value,
+			content: content.replaceAll("'", "''"),
+			topic: madlibTopic,
+			date: today,
+		};
+
+		axios
+			.post("/api/user_madlibs", newSave)
+			.catch((error) => console.log(error));
+
+		saveButton.removeEventListener("transitionend", extra);
+		saveForm.classList.remove("author-name-active");
+		saveButton.classList.remove("save-madlib-active");
+		resetMadlib();
+	} else {
+		alert(
+			"If you don't want to put your name, choose an alias or put anonymous."
+		);
+	}
+};
+
+saveForm.addEventListener("submit", getInputAndSave);
+saveButton.addEventListener("click", getNameForm);

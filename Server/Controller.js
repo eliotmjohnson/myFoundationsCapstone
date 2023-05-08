@@ -66,4 +66,50 @@ module.exports = {
 			})
 			.catch((err) => console.log(err));
 	},
+
+	getUserMadlibs: (req, res) => {
+		sequelize
+			.query(
+				`
+				SELECT *
+				FROM user_mad_libs;
+			`
+			)
+			.then((dbRes) => {
+				res.status(200).send(dbRes[0]);
+			})
+			.catch((err) => console.log(err));
+	},
+
+	saveUserMadlib: (req, res) => {
+		let { name, content, topic, date } = req.body;
+		sequelize
+			.query(
+				`
+				INSERT INTO user_mad_libs (author_name, madlib_topic, madlib_content, date_created)
+				VALUES ('${name}', '${topic}', '${content}', '${date}');
+			`
+			)
+			.then(() => {
+				res.status(200);
+			})
+			.catch((err) => console.log(err));
+	},
+
+	getSortedMadlibs: (req, res) => {
+		const { madlibName } = req.params;
+
+		sequelize
+			.query(
+				`
+				SELECT *
+				FROM user_mad_libs
+				WHERE madlib_topic = '${madlibName}';
+			`
+			)
+			.then((dbRes) => {
+				res.status(200).send(dbRes[0]);
+			})
+			.catch((err) => console.log(err));
+	},
 };

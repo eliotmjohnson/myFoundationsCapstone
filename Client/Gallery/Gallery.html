@@ -8,15 +8,18 @@
     <link rel="icon" type="image/x-icon" href="../Images/favicon.ico">
     <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="./Gallery.css">
+    <link rel="stylesheet" href="./Gallery-Mobile.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
     <script src="./Gallery.js" defer></script>
+    <script> </script>
     <title>MadLib Madness</title>
 </head>
 
 <body>
     <div class="semi-black-background">
         <div>
-            <h1 class="start-over">&#x2191 <br> Create another MadLib!!</h1>
+            <h1 class="start-over">&#10005;</h1>
+            <section class="completed-madlib-preview"></section>
         </div>
     </div>
     <header class="main-header">
@@ -31,25 +34,32 @@
             <a href="/" style="text-decoration: none;">Create a MadLib</a>
         </nav>
         <img class="madlib-guy2" src="../Images/madlib_guy2.png" alt="madlib-guy2">
-        <h3 class="header-arrow">Welcome to the User MadLib Gallery!!</h3>
+        <h3 class="header-arrow">Welcome to the User MadLib Gallery!!<br>&#8964</h3>
     </header>
-    <section class="madlib-gallery">
-        <div class="madlib-card">
-            <span class="madguys">
-                <img class="madguy-one" src="../Images/madlib_guy2.png" alt="madlib-guy1">
-                <img class="madguy-two" src="../Images/madlib_guy2.png" alt="madlib-guy2">
-            </span>
-            <div class="card-content">
-                <Aside class="madlib-info">
-                    <h1>Author Name</h1>
-                    <h2>Topic</h2>
-                    <p>Date Created</p>
-                </Aside>
-                <section class="madlib-preview">BLAHAHAHAH</section>
+    <section class="header-dropdown-text">
+        <p class="header-title-two">Pick a Topic to Sort By!!</p>
+        <aside class="madlib-outline-selection">
+            <div class="selectors">
+                <section style="display: flex; gap: .5rem; visibility: hidden;">
+                    <div class="madlib-outline-selection-buttons">
+                        <button>Christmas Vacation</button>
+                        <button>Spooky Halloween</button>
+                        <button>Birthday Party!</button>
+                        <button>Family Roadtrip</button>
+                        <button>Thanksgiving</button>
+                    </div>
+                    <div class="madlib-outline-selection-buttons">
+                        <button>Scooby-Doo!</button>
+                        <button>Trip to Disney World</button>
+                        <button>Charlie Brown</button>
+                        <button>The Avengers</button>
+                        <button>Spongebob Squarepants</button>
+                    </div>
+                </section>
             </div>
-        </div>
+        </aside>
     </section>
-
+    <section class="madlib-gallery"></section>
 </body>
 
 </html>

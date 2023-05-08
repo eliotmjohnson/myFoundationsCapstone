@@ -1,0 +1,140 @@
+@media screen and (max-width: 1325px) {
+    .madlib-preview {
+        display: none;
+    }
+
+    .show-madlib {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .header-nav-left {
+        display: none;
+    }
+
+    .header-nav-right {
+        position: absolute;
+        top: .7rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .madlib-guy1 {
+        position: absolute;
+        width: 4rem;
+        top: .25rem;
+        right: 65%;
+    }
+
+    .madlib-guy2 {
+        width: 4rem;
+        position: absolute;
+        top: .25rem;
+        left: 65%;
+    }
+
+    .semi-black-background>div {
+        gap: 0rem;
+    }
+
+    .completed-madlib-preview {
+        scale: 1;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        min-height: 85rem;
+    }
+
+    .start-over {
+        height: 50px;
+        width: 50px;
+    }
+
+    .start-over:hover {
+        height: 50px;
+        width: 50px;
+        font-size: 1.5rem;
+    }
+
+    .madlib-guy1 {
+        width: 3rem;
+        right: 70%;
+        top: .7rem;
+    }
+
+    .madlib-guy2 {
+        width: 3rem;
+        left: 70%;
+        top: .7rem;
+    }
+
+    .header-title {
+        max-width: 0;
+        min-width: 100%;
+        font-size: 3.5rem;
+    }
+
+    .main-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 12rem;
+    }
+
+    .completed-madlib-preview {
+        height: 47rem;
+        min-width: 0rem;
+        max-width: 21.5rem;
+        font-size: .87rem;
+        z-index: 3;
+    }
+
+    .madlib-info {
+        scale: .8;
+    }
+
+    .header-dropdown-text {
+        gap: 0rem;
+        width: 100%;
+        top: 7rem;
+    }
+
+    .madlib-outline-selection {
+        height: 13rem;
+        gap: 0rem;
+        margin: 0rem;
+        width: 10rem;
+    }
+
+    .active {
+        padding-bottom: 24rem;
+    }
+
+    .header-arrow {
+        position: absolute;
+        max-height: 10rem;
+        width: 18rem;
+        line-height: 1.25rem;
+        top: 7.75rem;
+        font-size: 1.5rem;
+    }
+
+    .header-arrow-active {
+        top: 31.75rem;
+    }
+
+    .header-title-two {
+        scale: .7;
+        min-width: 35rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .selectors {
+        scale: .65;
+    }
+}
