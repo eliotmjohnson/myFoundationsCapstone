@@ -100,7 +100,11 @@ const getMadlibPreview = (e) => {
 
 			if (newContent.length > 1350) {
 				madlibPreview.style.fontSize = ".8rem";
-			} else if (newContent.includes("SpongeBob")) {
+			} else if (
+				newContent.includes("SpongeBob") ||
+				newContent.includes("Trip to Disney World") ||
+				newContent.includes("The Avengers")
+			) {
 				madlibPreview.style.fontSize = ".95rem";
 			} else if (newContent.length > 1110) {
 				madlibPreview.style.fontSize = ".9rem";

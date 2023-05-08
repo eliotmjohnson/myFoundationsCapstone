@@ -132,7 +132,7 @@
     .madlib-main-screen {
         -webkit-transform: translate(-77%, -77%);
         transform: translate(-59%, -59%);
-        top: 55.25rem;
+        top: 55.5rem;
         scale: .85;
     }
 }
@@ -182,11 +182,11 @@
     }
 
     .active {
-        padding-bottom: 68rem;
+        padding-bottom: 65.5rem;
     }
 
     .header-arrow-active {
-        top: 77.5rem;
+        top: 75rem;
     }
 
     @keyframes preview-magic {
@@ -229,7 +229,7 @@
     }
 
     .header-dropdown-text {
-        top: 31rem;
+        top: 30rem;
     }
 
     .header-title-two {
@@ -246,7 +246,7 @@
     .madlib-preview {
         transform: scale(.8);
         width: 26.5rem;
-        height: 40rem;
+        height: 37rem;
         padding-bottom: 2rem;
         margin-bottom: -6rem;
     }
@@ -259,7 +259,7 @@
         -webkit-transform: translate(-77%, -77%);
         transform: translate(-77%, -77%);
         width: 100%;
-        top: 50.5rem;
+        top: 48rem;
         left: -30rem;
         scale: .65;
     }
