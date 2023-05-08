@@ -131,6 +131,7 @@ a {
 }
 
 .main-header>nav>a {
+    color: rgb(254, 89, 89);
     transition: color .3s;
     text-shadow: 0 .05rem .4rem #002855;
 }
@@ -143,7 +144,6 @@ a {
     display: flex;
     flex: 1;
     justify-content: flex-end;
-    color: rgb(254, 89, 89);
     font-size: 1.4rem;
     margin: 1rem;
 }
@@ -160,7 +160,6 @@ a {
 
 .header-nav-right {
     flex: 1;
-    color: rgb(254, 89, 89);
     font-size: 1.4rem;
     margin: 1rem;
 }
