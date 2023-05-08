@@ -86,6 +86,18 @@ const dontRepeatYourself = (data) => {
 
 		const madlibCard = document.createElement("div");
 
+		const nameLength = (name) => {
+			if (name.length > 25) {
+				return "font-size: 2rem;";
+			} else if (name.length > 18) {
+				return "font-size: 2.5rem;";
+			} else if (name.length > 12) {
+				return "font-size: 3rem;";
+			} else {
+				return "";
+			}
+		};
+
 		madlibCard.classList.add("madlib-card");
 		madlibCard.innerHTML = `
                 <span class="madguys">
@@ -94,10 +106,13 @@ const dontRepeatYourself = (data) => {
                 </span>
                 <div class="card-content">
                     <Aside class="madlib-info">
-                        <h1>${name}</h1>
+                        <h1 style="${nameLength(name)}">${name}</h1>
                         <h2>${topic}</h2>
                         <p>${date}</p>
-						<button class="show-madlib" onclick="showMadlib(\`${content}\`)">Click to see MadLib!</button>
+						<button class="show-madlib" onclick="showMadlib(\`${content.replaceAll(
+							'"',
+							"#"
+						)}\`)">Click to see MadLib!</button>
                     </Aside>
                     <section class="madlib-preview">${content}</section>
                 </div>
@@ -136,15 +151,15 @@ for (let i = 0; i < firstButtonSet.length; i++) {
 // Show User MadLib On Smaller Screens
 
 const showMadlib = (content) => {
-	blackBackground.style.transition = "opacity 1s, z-index 0s"
-	completedPreview.innerHTML = content;
+	blackBackground.style.transition = "opacity 1s, z-index 0s";
+	completedPreview.innerHTML = content.replaceAll("#", '"');
 	blackBackground.style.zIndex = "3";
 	blackBackground.style.opacity = "1";
 };
 
 const hideMadlib = () => {
 	blackBackground.style.opacity = "0";
-	blackBackground.style.transition = "opacity .3s, z-index 0s .3s"
+	blackBackground.style.transition = "opacity .3s, z-index 0s .3s";
 	blackBackground.style.zIndex = "-1";
 };
 closeButton.addEventListener("click", hideMadlib);

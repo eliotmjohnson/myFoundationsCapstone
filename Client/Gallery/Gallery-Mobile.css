@@ -1,4 +1,4 @@
-@media screen and (max-width: 1445px){
+@media screen and (max-width: 1445px) {
     .header-nav-right {
         text-align: center;
     }
@@ -55,14 +55,24 @@
         min-height: 85rem;
     }
 
+    .semi-black-background>div {
+        height: calc(100% + 12rem);
+        margin-top: 2rem;
+    }
+
     .start-over {
-        height: 50px;
-        width: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        max-width: 50px;
+        min-width: 50px;
+        font-size: 1.5rem;
     }
 
     .start-over:hover {
-        height: 50px;
-        width: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        max-width: 50px;
+        min-width: 50px;
         font-size: 1.5rem;
     }
 
@@ -92,7 +102,6 @@
     }
 
     .completed-madlib-preview {
-        height: 47rem;
         min-width: 0rem;
         max-width: 21.5rem;
         font-size: .87rem;

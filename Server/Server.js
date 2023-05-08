@@ -23,6 +23,7 @@ const {
 } = require("./Controller");
 
 // Seed
+
 const { seed } = require("../Database/SeedDb");
 app.post("/seed", seed);
 
@@ -39,13 +40,7 @@ app.get("/api/sorted_madlibs/:madlibName", getSortedMadlibs);
 
 app.post("/api/user_madlibs", saveUserMadlib);
 
-// Delete Requests
-
-app.delete("");
-
-// Put Requests
-
-app.put("");
+// Server
 
 app.listen(
 	SERVER_PORT,

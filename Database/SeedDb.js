@@ -107,10 +107,11 @@ module.exports = {
 			('The Avengers', '${avengers.replace("`", "")}', '${wordPromptMagic(
 					avengers
 				)}'),
+
 			('Spongebob Squarepants', '${spongebobSquarepants.replace(
 				"`",
 				""
-			)}', '${wordPromptMagic(spongebobSquarepants)}')
+			)}', '${wordPromptMagic(spongebobSquarepants)}');
 			`
 			)
 			.then(() => {

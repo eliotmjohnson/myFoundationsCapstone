@@ -132,6 +132,8 @@ const moveMadlib = (e) => {
 	e.preventDefault();
 
 	nameInput.value = "";
+	saveForm.classList.remove("author-name-active");
+	saveButton.classList.remove("save-madlib-active");
 	headerArrow.parentNode.classList.remove("active");
 
 	headerArrow.classList.remove("header-arrow-active");
@@ -150,7 +152,7 @@ const moveMadlib = (e) => {
 	madlibSelector.classList.remove("yikes");
 
 	getMadlibing.style.transitionDelay = "0s";
-	getMadlibing.style.transition = "opacity .2s";
+	getMadlibing.style.transition = "opacity .1s";
 	getMadlibing.classList.remove("yikes");
 	getMadlibing.addEventListener("transitionend", madlibButtonHide);
 
@@ -270,7 +272,7 @@ const styleCompletedMadlib = () => {
 	madlibPreview.classList.remove("yikes");
 	madlibPreview.style.scale = "1.125";
 	madlibPreview.classList.remove("madlib-preview-movement");
-	blackBackground.removeEventListener("transitionend", hideBBG());
+	blackBackground.style.transition = "opacity 1s, z-index 0s 0s";
 	blackBackground.style.opacity = ".8";
 	blackBackground.style.zIndex = "2";
 	madlibPreview.classList.add("completed-madlib-preview");
@@ -282,10 +284,6 @@ madlibWordForm.addEventListener("submit", handleInput);
 
 // Restarting MadLib
 
-const hideBBG = () => {
-	blackBackground.style.zIndex = "-1";
-};
-
 const resetMadlib = () => {
 	resetBlackBg();
 	resetPreview();
@@ -293,7 +291,8 @@ const resetMadlib = () => {
 };
 
 const resetBlackBg = () => {
-	blackBackground.addEventListener("transitionend", hideBBG());
+	blackBackground.style.transition = "opacity .4s, z-index 0s .4s";
+	blackBackground.style.zIndex = "-1";
 	blackBackground.style.opacity = "0";
 };
 
@@ -306,20 +305,19 @@ const resetPreview = () => {
 startOver.addEventListener("click", resetMadlib);
 
 // Saving Madlib to Database
-const extra = () => {
-	saveForm.classList.add("author-name-active");
-};
 
 const getNameForm = (e) => {
-	saveButton.addEventListener("transitionend", extra);
+	saveForm.style.transition = "scale 1s .35s";
 	saveButton.classList.add("save-madlib-active");
+	saveForm.classList.add("author-name-active");
 };
 
 const getInputAndSave = (e) => {
 	e.preventDefault();
 
 	if (nameInput.value !== "") {
-		let today = new Date().toLocaleDateString();
+		const DateTime = luxon.DateTime;
+		let today = DateTime.now().toLocaleString();
 		let content = madlibPreview.innerHTML;
 
 		let newSave = {
@@ -333,9 +331,6 @@ const getInputAndSave = (e) => {
 			.post("/api/user_madlibs", newSave)
 			.catch((error) => console.log(error));
 
-		saveButton.removeEventListener("transitionend", extra);
-		saveForm.classList.remove("author-name-active");
-		saveButton.classList.remove("save-madlib-active");
 		resetMadlib();
 	} else {
 		alert(
