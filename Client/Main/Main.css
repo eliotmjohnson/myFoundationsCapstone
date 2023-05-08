@@ -166,7 +166,6 @@ a {
 .header-nav-left {
     display: flex;
     flex: 1;
-    text-align: center;
     justify-content: flex-end;
     color: rgb(254, 89, 89);
     font-size: 1.4rem;
