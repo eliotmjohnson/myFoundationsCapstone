@@ -291,7 +291,7 @@ const resetMadlib = () => {
 };
 
 const resetBlackBg = () => {
-	blackBackground.style.transition = "opacity 5s, z-index 0s 5s";
+	blackBackground.style.transition = "opacity .4s, z-index 0s .4s";
 	blackBackground.style.zIndex = "-1";
 	blackBackground.style.opacity = "0";
 };
