@@ -1,6 +1,7 @@
 // Elements
 
 const body = document.querySelector("body");
+const html = document.querySelector("html");
 const mainHeader = document.querySelector(".main-header");
 const headerArrow = document.querySelector(".header-arrow");
 const headerTitleTwo = document.querySelector(".header-title-two");
@@ -144,14 +145,16 @@ const showMadlib = (content) => {
 	completedPreview.innerHTML = content.replaceAll("#", '"');
 	blackBackground.style.zIndex = "3";
 	blackBackground.style.opacity = "1";
-	madlibGallery.style.overflow = "hidden";
+	body.style.overflow = "hidden";
+	html.style.overflow = "hidden";
 };
 
 const hideMadlib = () => {
 	blackBackground.style.opacity = "0";
 	blackBackground.style.transition = "opacity .3s, z-index 0s .3s";
 	blackBackground.style.zIndex = "-1";
-	madlibGallery.style.overflow = "visible";
+	body.style.overflow = "visible";
+	html.style.overflow = "visible";
 };
 
 closeButton.addEventListener("click", hideMadlib);
