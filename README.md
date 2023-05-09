@@ -2,7 +2,7 @@
 
 A website where you can pick from MadLib outlines by a topic and then you will fill in the word prompts with your own and have the story shown to you with your inputed words instead of the prompts. There is also a user MadLib gallery to see all of the other MadLibs people created and saved into the gallery.
 
-# Tech Stack
+### Tech Stack
 
 - Javascript
 - HTML
