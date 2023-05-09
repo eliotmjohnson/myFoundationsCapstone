@@ -21,7 +21,7 @@ A website where you can pick from MadLib outlines by a topic and then you will f
 
 - The user word input is retrieved from the html document through a unique UI input system and then all of the words are appended to the final unique user MadLib, which is displayed at the end. 
 
-- Has GET and POST Axios requests and Express endpoints (utilizing Sequelize) for getting the madlib outline, MadLib prompts, user-created MadLibs, and for posting saved MadLibs to the gallery.
+- Has GET and POST Axios requests and Express endpoints (utilizing Sequelize) for getting the MadLib outline, MadLib prompts, user-created MadLibs, and for posting saved MadLibs to the gallery.
 
 - Has full-functioning scaling for different sized screens.
 
