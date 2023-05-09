@@ -43,22 +43,18 @@ const headerDropdown = () => {
 		headerTitleTwo.classList.add("yikes");
 		headerTitleTwo.style.transitionDelay = ".1s";
 
-		madlibSelector.style.transition = "opacity 1s";
+		madlibSelector.style.transition = "opacity 1s .5s";
 		madlibSelector.classList.add("yikes");
-		madlibSelector.style.transitionDelay = ".5s";
 
+		btnsSection.style.transition = "visibility 0s 0s";
 		btnsSection.style.visibility = "visible";
 
 		madlibPreview.classList.add("yikes");
 	}
 
 	if (headerArrow.innerHTML.includes("Change MadLib")) {
-		getMadlibing.removeEventListener("transitionend", madlibButtonHide);
-		madlibSelector.removeEventListener("transitionend", madlibButtonHide2);
-
+		getMadlibing.style.transition = "opacity 1s .5s, visibility 0s 0s";
 		getMadlibing.style.visibility = "visible";
-		getMadlibing.style.transition = "opacity 1s";
-		getMadlibing.style.transitionDelay = ".5s";
 		getMadlibing.classList.add("yikes");
 
 		if (madlibPreview.classList.contains("madlib-preview-movement")) {
@@ -155,12 +151,13 @@ const moveMadlib = (e) => {
 	madlibSelector.style.transition = "opacity .2s";
 	madlibSelector.classList.remove("yikes");
 
-	getMadlibing.style.transitionDelay = "0s";
-	getMadlibing.style.transition = "opacity .1s";
-	getMadlibing.classList.remove("yikes");
-	getMadlibing.addEventListener("transitionend", madlibButtonHide);
+	btnsSection.style.transition = "visibility 0s .2s";
+	btnsSection.style.visibility = "hidden";
 
-	madlibSelector.addEventListener("transitionend", madlibButtonHide2);
+	getMadlibing.style.transitionDelay = "0s";
+	getMadlibing.style.transition = "opacity .1s, visibility 0s .1s";
+	getMadlibing.classList.remove("yikes");
+	getMadlibing.style.visibility = "hidden";
 
 	madlibMain.style.transitionDelay = "1.5s";
 	madlibMain.style.left = "50%";
@@ -169,14 +166,6 @@ const moveMadlib = (e) => {
 };
 
 getMadlibing.addEventListener("click", moveMadlib);
-
-const madlibButtonHide = () => {
-	getMadlibing.style.visibility = "hidden";
-};
-
-const madlibButtonHide2 = () => {
-	btnsSection.style.visibility = "hidden";
-};
 
 // Word Input Handling
 

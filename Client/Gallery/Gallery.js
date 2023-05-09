@@ -1,5 +1,6 @@
 // Elements
 
+const body = document.querySelector("body");
 const mainHeader = document.querySelector(".main-header");
 const headerArrow = document.querySelector(".header-arrow");
 const headerTitleTwo = document.querySelector(".header-title-two");
@@ -22,40 +23,29 @@ const headerDropdown = () => {
 		mainHeader.classList.add("active");
 
 		headerTitleTwo.style.zIndex = "2";
+		headerTitleTwo.style.transition = "opacity .3s .1s";
 		headerTitleTwo.classList.add("yikes");
-		headerTitleTwo.style.transitionDelay = ".1s";
 
-		madlibSelector.style.transition = "opacity 1s";
+		madlibSelector.style.transition = "opacity 1s .5s";
 		madlibSelector.classList.add("yikes");
-		madlibSelector.style.transitionDelay = ".5s";
 
 		btnsSection.style.visibility = "visible";
-
-		headerTitleTwo.removeEventListener("transitionend", headerTitleTwoHide);
-		madlibSelector.removeEventListener("transitionend", madlibButtonHide2);
 	} else {
 		headerArrow.parentNode.classList.remove("active");
 
 		headerArrow.classList.remove("header-arrow-active");
 
 		headerTitleTwo.classList.remove("yikes");
-		headerTitleTwo.style.transitionDelay = ".4s";
+		headerTitleTwo.style.transition = "opacity .3s .4s, z-index 0s .7s";
+		headerTitleTwo.style.zIndex = "0";
 
 		madlibSelector.style.transitionDelay = "0s";
 		madlibSelector.style.transition = "opacity .2s";
 		madlibSelector.classList.remove("yikes");
 
-		headerTitleTwo.addEventListener("transitionend", headerTitleTwoHide);
-		madlibSelector.addEventListener("transitionend", madlibButtonHide2);
+		btnsSection.style.transition = "visibility 0s .2s";
+		btnsSection.style.visibility = "hidden";
 	}
-};
-
-const madlibButtonHide2 = () => {
-	btnsSection.style.visibility = "hidden";
-};
-
-const headerTitleTwoHide = () => {
-	headerTitleTwo.style.zIndex = "0";
 };
 
 headerArrow.addEventListener("click", headerDropdown);
@@ -155,11 +145,14 @@ const showMadlib = (content) => {
 	completedPreview.innerHTML = content.replaceAll("#", '"');
 	blackBackground.style.zIndex = "3";
 	blackBackground.style.opacity = "1";
+	body.style.overflow = "hidden";
 };
 
 const hideMadlib = () => {
 	blackBackground.style.opacity = "0";
 	blackBackground.style.transition = "opacity .3s, z-index 0s .3s";
 	blackBackground.style.zIndex = "-1";
+	body.style.overflow = "visible";
 };
+
 closeButton.addEventListener("click", hideMadlib);
