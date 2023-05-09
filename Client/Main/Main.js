@@ -146,16 +146,13 @@ const moveMadlib = (e) => {
 	headerTitleTwo.classList.remove("yikes");
 	headerTitleTwo.style.transitionDelay = ".4s";
 
-	// madlibSelector.style.transition = "opacity .2s 0s";
-	madlibSelector.style.transition = "opacity 4s 0s";
+	madlibSelector.style.transition = "opacity .2s 0s";
 	madlibSelector.classList.remove("yikes");
 
-	// btnsSection.style.transition = "visibility 0s .2s";
-	btnsSection.style.transition = "visibility 0s 4s";
+	btnsSection.style.transition = "visibility 0s .2s";
 	btnsSection.style.visibility = "hidden";
 
-	// getMadlibing.style.transition = "opacity .1s, visibility 0s .1s";
-	getMadlibing.style.transition = "opacity 4s 0s, visibility 0s 4s";
+	getMadlibing.style.transition = "opacity .1s, visibility 0s .1s";
 	getMadlibing.classList.remove("yikes");
 	getMadlibing.style.visibility = "hidden";
 
