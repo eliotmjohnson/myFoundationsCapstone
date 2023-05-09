@@ -26,3 +26,7 @@ A website where you can pick from MadLib outlines by a topic and then you will f
 - Has full-functioning scaling for different sized screens.
 
 - Fully-functioning mobile site.
+
+### Screenshots
+
+[CLick](./Client/Images/Screenshots/)
