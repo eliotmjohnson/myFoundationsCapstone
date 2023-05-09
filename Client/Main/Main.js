@@ -36,12 +36,11 @@ const headerDropdown = () => {
 		headerArrow.innerHTML.includes("Start Here") ||
 		headerArrow.innerHTML.includes("Change MadLib")
 	) {
-		madlibSelector.classList.add("yikes");
 		headerArrow.classList.add("header-arrow-active");
 		mainHeader.classList.add("active");
 
-		headerTitleTwo.classList.add("yikes");
 		headerTitleTwo.style.transitionDelay = ".1s";
+		headerTitleTwo.classList.add("yikes");
 
 		madlibSelector.style.transition = "opacity 1s .5s";
 		madlibSelector.classList.add("yikes");
@@ -108,8 +107,8 @@ const getMadlibPreview = (e) => {
 				madlibPreview.style.fontSize = "1rem";
 			}
 
+			getMadlibing.style.transition = "opacity 1s, visibility 0s 0s";
 			getMadlibing.style.visibility = "visible";
-			getMadlibing.style.transition = "opacity 1s";
 			getMadlibing.classList.add("yikes");
 
 			madlibPreview.style.opacity = "1";
@@ -147,15 +146,16 @@ const moveMadlib = (e) => {
 	headerTitleTwo.classList.remove("yikes");
 	headerTitleTwo.style.transitionDelay = ".4s";
 
-	madlibSelector.style.transitionDelay = "0s";
-	madlibSelector.style.transition = "opacity .2s";
+	// madlibSelector.style.transition = "opacity .2s 0s";
+	madlibSelector.style.transition = "opacity 4s 0s";
 	madlibSelector.classList.remove("yikes");
 
-	btnsSection.style.transition = "visibility 0s .2s";
+	// btnsSection.style.transition = "visibility 0s .2s";
+	btnsSection.style.transition = "visibility 0s 4s";
 	btnsSection.style.visibility = "hidden";
 
-	getMadlibing.style.transitionDelay = "0s";
-	getMadlibing.style.transition = "opacity .1s, visibility 0s .1s";
+	// getMadlibing.style.transition = "opacity .1s, visibility 0s .1s";
+	getMadlibing.style.transition = "opacity 4s 0s, visibility 0s 4s";
 	getMadlibing.classList.remove("yikes");
 	getMadlibing.style.visibility = "hidden";
 

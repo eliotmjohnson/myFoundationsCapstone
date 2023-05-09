@@ -18,7 +18,6 @@ const closeButton = document.querySelector(".start-over");
 
 const headerDropdown = () => {
 	if (!madlibSelector.classList.contains("yikes")) {
-		madlibSelector.classList.add("yikes");
 		headerArrow.classList.add("header-arrow-active");
 		mainHeader.classList.add("active");
 
@@ -29,6 +28,7 @@ const headerDropdown = () => {
 		madlibSelector.style.transition = "opacity 1s .5s";
 		madlibSelector.classList.add("yikes");
 
+		btnsSection.style.transition = "visibility 0s 0s";
 		btnsSection.style.visibility = "visible";
 	} else {
 		headerArrow.parentNode.classList.remove("active");
@@ -39,8 +39,7 @@ const headerDropdown = () => {
 		headerTitleTwo.style.transition = "opacity .3s .4s, z-index 0s .7s";
 		headerTitleTwo.style.zIndex = "0";
 
-		madlibSelector.style.transitionDelay = "0s";
-		madlibSelector.style.transition = "opacity .2s";
+		madlibSelector.style.transition = "opacity .2s 0s";
 		madlibSelector.classList.remove("yikes");
 
 		btnsSection.style.transition = "visibility 0s .2s";
