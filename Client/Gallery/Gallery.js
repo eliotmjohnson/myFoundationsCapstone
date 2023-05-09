@@ -144,16 +144,14 @@ const showMadlib = (content) => {
 	completedPreview.innerHTML = content.replaceAll("#", '"');
 	blackBackground.style.zIndex = "3";
 	blackBackground.style.opacity = "1";
-	body.style.overflow = "hidden";
-	body.style.position = "relative";
+	madlibGallery.style.overflow = "hidden";
 };
 
 const hideMadlib = () => {
 	blackBackground.style.opacity = "0";
 	blackBackground.style.transition = "opacity .3s, z-index 0s .3s";
 	blackBackground.style.zIndex = "-1";
-	body.style.overflow = "visible";
-	body.style.position = "initial";
+	madlibGallery.style.overflow = "visible";
 };
 
 closeButton.addEventListener("click", hideMadlib);
