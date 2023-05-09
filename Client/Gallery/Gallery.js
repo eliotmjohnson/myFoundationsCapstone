@@ -145,7 +145,7 @@ const showMadlib = (content) => {
 	blackBackground.style.zIndex = "3";
 	blackBackground.style.opacity = "1";
 	body.style.overflow = "hidden";
-	body.style.position = "fixed";
+	body.style.position = "relative";
 };
 
 const hideMadlib = () => {
