@@ -145,6 +145,7 @@ const showMadlib = (content) => {
 	blackBackground.style.zIndex = "3";
 	blackBackground.style.opacity = "1";
 	body.style.overflow = "hidden";
+	body.style.position = "fixed";
 };
 
 const hideMadlib = () => {
@@ -152,6 +153,7 @@ const hideMadlib = () => {
 	blackBackground.style.transition = "opacity .3s, z-index 0s .3s";
 	blackBackground.style.zIndex = "-1";
 	body.style.overflow = "visible";
+	body.style.position = "initial";
 };
 
 closeButton.addEventListener("click", hideMadlib);
