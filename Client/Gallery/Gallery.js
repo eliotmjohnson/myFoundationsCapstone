@@ -42,8 +42,9 @@ const headerDropdown = () => {
 		madlibSelector.style.transition = "opacity .2s 0s";
 		madlibSelector.classList.remove("yikes");
 
-		btnsSection.style.transition = "visibility 0s .2s";
-		btnsSection.style.visibility = "hidden";
+		// btnsSection.style.transition = "visibility 0s .2s";
+		// btnsSection.style.visibility = "hidden";
+		
 	}
 };
 
