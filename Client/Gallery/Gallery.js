@@ -39,7 +39,7 @@ const headerDropdown = () => {
 		headerTitleTwo.style.transition = "opacity .3s .4s, z-index 0s .7s";
 		headerTitleTwo.style.zIndex = "0";
 
-		madlibSelector.style.transition = "opacity .2s 0s";
+		madlibSelector.style.transition = "opacity .5s 0s";
 		madlibSelector.classList.remove("yikes");
 
 		// btnsSection.style.transition = "visibility 0s .2s";
