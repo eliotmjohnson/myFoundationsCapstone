@@ -127,7 +127,7 @@ a {
 .active {
     border-bottom-left-radius: 10rem;
     border-bottom-right-radius: 10rem;
-    padding-bottom: 30rem;
+    padding-bottom: 29rem;
 }
 
 .main-header>nav>a {
@@ -187,7 +187,7 @@ a:visited {
 }
 
 .header-arrow-active {
-    top: 39rem;
+    top: 38rem;
 }
 
 .madlib-guy1 {
@@ -214,7 +214,7 @@ a:visited {
     position: absolute;
     gap: 1.2rem;
     width: 100%;
-    top: 13rem;
+    top: 11.5rem;
     height: 20rem;
 }
 

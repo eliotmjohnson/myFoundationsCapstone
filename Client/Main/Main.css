@@ -524,7 +524,7 @@ a:visited {
     min-height: 2.5rem;
 }
 
-.footer-links{
+.footer-links {
     display: flex;
     gap: 1rem;
     margin: 2rem;
@@ -534,21 +534,21 @@ a:visited {
     padding-top: .7rem;
     padding-bottom: .7rem;
     background-color: rgb(254, 89, 89);
-    box-shadow: 0 .4rem 1rem 0 black; 
+    box-shadow: 0 .4rem 1rem 0 black;
     bottom: 0;
     right: 0;
     z-index: 3;
     opacity: .9;
 }
 
-.github-icon{
+.github-icon {
     height: 2.5rem;
     border-radius: 5rem;
     cursor: pointer;
     box-shadow: 0 .1rem .5rem 0 black;
 }
 
-.linkedin-icon{
+.linkedin-icon {
     height: 2.5rem;
     cursor: pointer;
     border-radius: .4rem;

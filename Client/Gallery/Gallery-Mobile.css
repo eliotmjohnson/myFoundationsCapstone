@@ -124,7 +124,7 @@
     .header-dropdown-text {
         gap: 0rem;
         width: 100%;
-        top: 7rem;
+        top: 6rem;
     }
 
     .madlib-outline-selection {
@@ -135,7 +135,7 @@
     }
 
     .active {
-        padding-bottom: 24rem;
+        padding-bottom: 20.5rem;
     }
 
     .header-arrow {
@@ -148,13 +148,13 @@
     }
 
     .header-arrow-active {
-        top: 31.75rem;
+        top: 28.25rem;
     }
 
     .header-title-two {
         scale: .7;
         min-width: 35rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         text-align: center;
     }
 
