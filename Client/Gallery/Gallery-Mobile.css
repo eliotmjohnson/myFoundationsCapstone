@@ -161,4 +161,10 @@
     .selectors {
         scale: .65;
     }
+
+    .footer-links {
+        margin-bottom: 1rem;
+        margin-right: 0rem;
+        scale: .8;
+    }
 }
