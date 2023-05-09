@@ -15,8 +15,14 @@ A website where you can pick from MadLib outlines by a topic and then you will f
 - RollBar
 - Dotenv
 
-<!-- - It will have a database with all of the outlines in one table that will be queried from and sent to the front end
+### Features
 
-- There will be GET, POST, PUT, and DELETE request functions for getting the madlib outline, for sending the words from the user, and for deleting words and changing the words sent in.
+- PostgreSQL database seeded so that is has all of the pre-written MadLib outlines, and also has the ability to store all of the user MadLibs created through Sequelize queries.
 
-- Possible apis will be used for extra fun on website as well. Not sure yet. -->
+- The user word input is retrieved from the html document through a unique UI input system and then all of the words are appended to the final unique user MadLib, which is displayed at the end. 
+
+- Has GET and POST Axios requests and Express endpoints (utilizing Sequelize) for getting the madlib outline, MadLib prompts, user-created MadLibs, and for posting saved MadLibs to the gallery.
+
+- Has full-functioning scaling for different sized screens.
+
+- Fully-functioning mobile site.
