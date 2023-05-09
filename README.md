@@ -1,6 +1,6 @@
-MadLib Madness:
+# MadLib Madness
 
-- A website where you can pick from madlib outlines by a topic and then you will fill in the words with your own adn have the story shown to you with your inputed words
+A website where you can pick from madlib outlines by a topic and then you will fill in the words with your own and have the story shown to you with your unique, inputed words. There is also a User MadLib gallery to see all of the other MAdLibs people created and saved into the gallery.
 
 - It will have a database with all of the outlines in one table that will be queried from and sent to the front end
 
