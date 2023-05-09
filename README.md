@@ -2,7 +2,7 @@
 
 A website where you can pick from MadLib outlines by a topic and then you will fill in the word prompts with your own and have the story shown to you with your inputed words instead of the prompts. There is also a user MadLib gallery to see all of the other MadLibs people created and saved into the gallery.
 
-### Tech Stack
+## Tech Stack
 
 - Javascript
 - HTML
@@ -15,7 +15,7 @@ A website where you can pick from MadLib outlines by a topic and then you will f
 - RollBar
 - Dotenv
 
-### Features
+## Features
 
 - PostgreSQL database seeded so that is has all of the pre-written MadLib outlines, and also has the ability to store all of the user MadLibs created through Sequelize queries.
 
@@ -27,6 +27,9 @@ A website where you can pick from MadLib outlines by a topic and then you will f
 
 - Fully-functioning mobile site.
 
-### Screenshots
+## Screenshots
 
 [Here!](./Client/Images/Screenshots/)
+
+## Demo Video
+
