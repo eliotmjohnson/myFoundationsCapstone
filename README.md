@@ -30,3 +30,5 @@ A website where you can pick from MadLib outlines by a topic and then you will f
 ## Screenshots
 
 [Here!](./Client/Images/Screenshots/)
+
+<!-- ## Demo Video -->
