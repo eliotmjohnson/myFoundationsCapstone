@@ -10,7 +10,7 @@
 .semi-black-background {
     background-color: black;
     z-index: -1;
-    height: 60rem;
+    height: 65rem;
     width: 100%;
     position: absolute;
     display: flex;
@@ -124,9 +124,9 @@
 body {
     font-family: myCustomFont;
     letter-spacing: .1rem;
-    background-image: linear-gradient(158deg, rgb(254, 89, 89) 54%, lightgreen 55%, #0466C8 56%);
+    background-image: linear-gradient(158deg, rgb(254, 89, 89) 53%, lightgreen 54%, #0466C8 55%);
     background-repeat: no-repeat;
-    min-height: 60rem;
+    min-height: 65rem;
 }
 
 strong {
@@ -463,11 +463,11 @@ a:visited {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: .2rem;
     position: absolute;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    top: 55.7rem;
+    top: 57rem;
     left: -30rem;
     transition: left .5s;
     transition-delay: 0s;
@@ -524,6 +524,27 @@ a:visited {
 #next-button {
     min-height: 2.5rem;
 }
+
+.counter {
+    display: flex;
+    border-radius: 3rem;
+    align-items: center;
+    height: 2.5rem;
+    border: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: lightgreen;
+    box-shadow: 0 .4rem 1.3rem 0 black;
+}
+
+.counter>h1 {
+    font-family: inherit;
+    color: rgb(254, 89, 89);
+    font-size: 1.5rem;
+    letter-spacing: .15rem;
+    text-shadow: 0 .15rem .2rem #002855;
+}
+
 
 .footer-links {
     display: flex;

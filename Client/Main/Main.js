@@ -20,6 +20,8 @@ const nextButton = document.querySelector("#next-button");
 const saveButton = document.querySelector(".save-madlib");
 const nameInput = document.querySelector(".author-name");
 const saveForm = document.querySelector(".save-form");
+const currentWord = document.querySelector(".current-word");
+const arrayLength = document.querySelector(".array-length");
 
 // Other Variables
 
@@ -175,6 +177,8 @@ const getPlaceHolders = () => {
 			let placeHolder = res.data[0].madlib_word_types;
 			placeholderArr = placeHolder.split(",");
 
+			currentWord.innerHTML = x + 1;
+			arrayLength.innerHTML = placeholderArr.length;
 			madlibWordInput.placeholder = `${placeholderArr[0].toUpperCase()}`;
 		})
 		.catch((error) => console.log(error));
@@ -182,6 +186,7 @@ const getPlaceHolders = () => {
 
 const incrementWord = () => {
 	x++;
+	currentWord.innerHTML = x + 1;
 };
 
 const handleInput = (e) => {

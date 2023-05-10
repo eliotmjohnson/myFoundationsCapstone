@@ -132,7 +132,7 @@
     .madlib-main-screen {
         -webkit-transform: translate(-77%, -77%);
         transform: translate(-59%, -59%);
-        top: 55.5rem;
+        top: 56.75rem;
         scale: .85;
     }
 }
@@ -259,7 +259,7 @@
         -webkit-transform: translate(-77%, -77%);
         transform: translate(-77%, -77%);
         width: 100%;
-        top: 49rem;
+        top: 49.5rem;
         left: -30rem;
         scale: .65;
     }
