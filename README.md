@@ -33,10 +33,4 @@ A website where you can pick from MadLib outlines by a topic and then you will f
 
 ## Demo Video
 
-<!-- [YouTube Link](https://youtu.be/BMFONAqk9_Q) -->
-
-<iframe width="560" height="315"
-src="https://youtu.be/BMFONAqk9_Q" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+[YouTube Link](https://youtu.be/BMFONAqk9_Q)
