@@ -73,7 +73,7 @@ module.exports = {
 				`
 				SELECT *
 				FROM user_mad_libs
-				ORDER BY date_created DESC;
+				ORDER BY TO_DATE(date_created, 'MM/DD/YYYY') DESC;
 			`
 			)
 			.then((dbRes) => {
@@ -106,7 +106,7 @@ module.exports = {
 				SELECT *
 				FROM user_mad_libs
 				WHERE madlib_topic = '${madlibName}'
-				ORDER BY date_created DESC;
+				ORDER BY TO_DATE(date_created, 'MM/DD/YYYY') DESC;
 			`
 			)
 			.then((dbRes) => {

@@ -44,6 +44,7 @@ const wordPromptMagic = (txt) => {
 	}
 	return promptsArr;
 };
+
 // DROP TABLE IF EXISTS user_mad_libs;
 
 // CREATE TABLE user_mad_libs (
@@ -53,6 +54,7 @@ const wordPromptMagic = (txt) => {
 // 	madlib_content TEXT NOT NULL,
 // 	date_created VARCHAR(255) NOT NULL
 // );
+
 module.exports = {
 	seed: (req, res) => {
 		sequelize
