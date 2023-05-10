@@ -31,4 +31,6 @@ A website where you can pick from MadLib outlines by a topic and then you will f
 
 [Here!](./Client/Images/Screenshots/)
 
-<!-- ## Demo Video -->
+## Demo Video
+
+[YouTube Link](https://youtu.be/BMFONAqk9_Q)
