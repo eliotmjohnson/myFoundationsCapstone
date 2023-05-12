@@ -30,6 +30,20 @@ let placeholderArr = [];
 let userWordArr = [];
 let newContent;
 let madlibTopic;
+let badWords;
+
+// Profanity Checker
+
+const getBadWords = () => {
+	axios
+		.get("/api/bad_words")
+		.then((res) => {
+			badWords = res.data;
+		})
+		.catch((error) => console.log(error));
+};
+
+getBadWords();
 
 // Header Animation
 
@@ -195,14 +209,18 @@ const handleInput = (e) => {
 	if (madlibWordInput.value !== "") {
 		const text = madlibWordInput.value;
 
-		userWordArr.splice(x, 1, text);
-
-		setNextPlaceholder();
-
-		if (userWordArr[x] === undefined) {
-			madlibWordInput.value = "";
+		if (badWords.includes(text)) {
+			alert("That word is not allowed, please choose another one.");
 		} else {
-			madlibWordInput.value = userWordArr[x];
+			userWordArr.splice(x, 1, text);
+
+			setNextPlaceholder();
+
+			if (userWordArr[x] === undefined) {
+				madlibWordInput.value = "";
+			} else {
+				madlibWordInput.value = userWordArr[x];
+			}
 		}
 	} else {
 		alert("Ah, ah , ah. You need to actually put something in the text box.");

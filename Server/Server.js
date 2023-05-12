@@ -20,6 +20,7 @@ const {
 	getUserMadlibs,
 	saveUserMadlib,
 	getSortedMadlibs,
+	getBadWordsArr,
 } = require("./Controller");
 
 // Seed
@@ -35,6 +36,7 @@ app.get("/api/madlib/:id", getMadlibContent);
 app.get("/api/prompts/:madlibName", getMadlibPrompts);
 app.get("/api/user_madlibs", getUserMadlibs);
 app.get("/api/sorted_madlibs/:madlibName", getSortedMadlibs);
+app.get("/api/bad_words", getBadWordsArr);
 
 // Post Requests
 

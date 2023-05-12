@@ -1,6 +1,7 @@
 require("dotenv").config();
 const { CONNECTION_STRING } = process.env;
 const { ROLL_BAR_TOKEN } = process.env;
+const { BAD_WORDS } = process.env;
 
 const path = require("path");
 
@@ -113,5 +114,9 @@ module.exports = {
 				res.status(200).send(dbRes[0]);
 			})
 			.catch((err) => console.log(err));
+	},
+
+	getBadWordsArr: (req, res) => {
+		res.status(200).send(JSON.parse(BAD_WORDS));
 	},
 };
