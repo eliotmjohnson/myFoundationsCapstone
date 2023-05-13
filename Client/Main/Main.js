@@ -209,7 +209,7 @@ const handleInput = (e) => {
 	if (madlibWordInput.value !== "") {
 		const text = madlibWordInput.value;
 
-		if (badWords.includes(text)) {
+		if (badWords.includes(text.toLowerCase())) {
 			alert("That word is not allowed, please choose another one.");
 		} else {
 			userWordArr.splice(x, 1, text);
