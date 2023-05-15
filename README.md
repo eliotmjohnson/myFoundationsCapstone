@@ -29,7 +29,7 @@ A website where you can pick from MadLib outlines by a topic and then you will f
 
 ## Website Link
 
-[MadLib Madness](http://3.22.71.5)
+[MadLib Madness](http://34.174.220.224/)
 
 ## Screenshots
 
